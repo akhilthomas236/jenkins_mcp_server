@@ -1,0 +1,16 @@
+{ 
+  "servers": { 
+    "jenkins-mcp-server": { 
+      "type": "stdio", 
+      "command": "jenkins-mcp-server", 
+      "args": [
+        "--verbose",
+      ],
+      "jenkinsConfig": {
+        "url": "http://localhost:8080",
+        "username": "admin",
+        "token": "114fef3b43c8eb59c83ba643e6cd2fe40b"
+      }
+    }
+  }
+}

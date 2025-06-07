@@ -1,0 +1,38 @@
+[project]
+name = "jenkins-mcp-server"
+version = "0.1.5"
+description = "A Python-based Jenkins MCP server using the Model Context Protocol Python SDK"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [ 
+    "mcp>=1.9.3",
+    "requests>=2.31.0",
+    "python-dotenv",
+    "pydantic>=2.0.0",
+    "urllib3>=2.0.0"
+]
+[[project.authors]]
+name = "akhilthomas236"
+email = "akhilthomas236@gmail.com"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+jenkins-mcp-server = "jenkins_mcp_server:main"
+
+[project.urls]
+Homepage = "https://github.com/akhilthomas236/jenkins-mcp-server"
+Issues = "https://github.com/akhilthomas236/jenkins-mcp-server/issues"
+Source = "https://github.com/akhilthomas236/jenkins-mcp-server"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jenkins_mcp_server"]
+
+[tool.hatch.build]
+include = [
+    "src/jenkins_mcp_server/**/*.py",
+    "README.md",
+    "LICENSE",
+]

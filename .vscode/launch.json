@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Jenkins MCP Server",
+            "type": "python",
+            "request": "launch",
+            "module": "jenkins_mcp_server",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "hidden": false,
+                "group": "Jenkins",
+                "order": 1
+            }
+        },
+        {
+            "name": "Run with UVX",
+            "type": "python",
+            "request": "launch",
+            "module": "uvx",
+            "args": ["jenkins-mcp-server"],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "presentation": {
+                "hidden": false,
+                "group": "Jenkins",
+                "order": 2
+            }
+        }
+    ]
+}

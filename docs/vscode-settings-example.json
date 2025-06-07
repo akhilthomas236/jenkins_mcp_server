@@ -1,0 +1,33 @@
+# VS Code Global Settings Example
+#
+# This file shows what you would add to your VS Code global settings.json
+# to configure the Jenkins MCP Server. Do NOT directly use this file - 
+# instead copy these settings into your own settings.json.
+#
+# To access your settings.json:
+# 1. Press Cmd+Shift+P (Mac) or Ctrl+Shift+P (Windows/Linux)
+# 2. Type "Preferences: Open User Settings (JSON)"
+# 3. Copy and paste the relevant sections below
+
+{
+  // MCP Server configuration
+  "mcp.servers": {
+    "jenkins-mcp-server": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["jenkins-mcp-server"]
+    }
+  },
+  
+  // Jenkins connection information
+  "jenkins-mcp-server.jenkins": {
+    "url": "http://your-jenkins-server:8080",
+    "username": "your-username",
+    "token": "your-api-token"
+  },
+  
+  // Enable MCP for GitHub Copilot
+  "github.copilot.advanced": {
+    "mcp.enabled": true
+  }
+}

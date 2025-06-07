@@ -1,0 +1,35 @@
+name: Python Package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install uv
+        uv pip install -e ".[dev]"
+    - name: Test package installation
+      run: |
+        uvx install .
+        uvx jenkins-mcp-server --help
+    - name: Build package
+      run: |
+        pip install build
+        python -m build

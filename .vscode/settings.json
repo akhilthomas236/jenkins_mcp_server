@@ -1,0 +1,39 @@
+{
+  // Python settings
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  
+  // Editor settings for Python
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  
+  "jenkins-mcp-server.jenkins": {
+    "url": "http://localhost:8080",
+    "username": "admin",
+    "token": "114fef3b43c8eb59c83ba643e6cd2fe40b"
+  },
+  
+  // Local MCP configuration for testing
+  "mcp": {
+    "servers": {
+      "jenkins-mcp-server": {
+        "type": "stdio",
+        "command": "jenkins-mcp-server",
+        "args": ["--verbose"]
+      }
+    }
+  },
+
+  // Terminal settings
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}/src"
+  },
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}/src"
+  },
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}/src"
+  }
+}
