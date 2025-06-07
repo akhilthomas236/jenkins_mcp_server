@@ -22,17 +22,6 @@
             "type": "shell",
             "command": "pip install uv && uvx install .",
             "problemMatcher": []
-        },
-        {
-            "label": "Test VS Code Settings",
-            "type": "shell",
-            "command": "./test_vscode_settings.py",
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "always",
-                "panel": "new",
-                "focus": true
-            }
         }
     ]
 }

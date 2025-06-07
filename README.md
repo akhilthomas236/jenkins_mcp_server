@@ -280,7 +280,7 @@ For development in VS Code:
       "command": "bash",
       "args": [
         "-c", 
-        "uvx jenkins-mcp-server"
+        "cd ${workspaceFolder} && python -m jenkins_mcp_server --verbose"
       ]
     }
   }
@@ -306,8 +306,6 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
     "jenkins-mcp-server": {
       "command": "uv",
       "args": [
-        "--directory",
-        "/Users/annmariyajoshy/vibecoding/jenkins-mcp-server-v2",
         "run",
         "jenkins-mcp-server"
       ]
@@ -367,7 +365,11 @@ experience, we strongly recommend using the [MCP Inspector](https://github.com/m
 You can launch the MCP Inspector via [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) with this command:
 
 ```bash
-npx @modelcontextprotocol/inspector uv --directory /Users/annmariyajoshy/vibecoding/jenkins-mcp-server-v2 run jenkins-mcp-server
+# If installed globally with uvx
+npx @modelcontextprotocol/inspector uvx jenkins-mcp-server
+
+# If installed in development mode
+npx @modelcontextprotocol/inspector python -m jenkins_mcp_server
 ```
 
 

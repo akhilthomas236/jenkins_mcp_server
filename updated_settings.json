@@ -1,0 +1,60 @@
+{
+    "github.copilot.advanced": {},
+    "redhat.telemetry.enabled": true,
+    "chat.mcp.discovery.enabled": true,
+    "github.copilot.chat.mcp.enabled": true,
+    "github.copilot.chat.mcp.configPaths": [
+        "${workspaceFolder}/mcp_config.json"
+    ],
+    "mcp": {
+        "servers": {
+            "my-mcp-server": {
+                "type": "stdio",
+                "command": "python",
+                "args": [
+                    "${workspaceFolder}/run_server.py"
+                ]
+            },
+            "time": {
+                "command": "uvx",
+                "args": [
+                    "mcp-server-time"
+                ]
+            },
+            "jenkins-mcp": {
+                "type": "stdio",
+                "command": "cd",
+                "args": [
+                    "${workspaceFolder}",
+                    "&&",
+                    ".",
+                    ".venv/bin/activate",
+                    "&&",
+                    "uv",
+                    "run",
+                    "jenkins-mcp-server"
+                ]
+            },
+            "jenkins-mcp-server-v2": {
+                "type": "stdio",
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "cd ${workspaceFolder} && . .venv/bin/activate && uv run jenkins-mcp-server"
+                ]
+            },
+            "jenkins-mcp-server": {
+                "type": "stdio",
+                "command": "uvx",
+                "args": [
+                    "jenkins-mcp-server"
+                ]
+            }
+        }
+    },
+    "jenkins-mcp-server.jenkins": {
+        "url": "http://localhost:8080",
+        "username": "admin",
+        "token": "your_token_here"
+    }
+}

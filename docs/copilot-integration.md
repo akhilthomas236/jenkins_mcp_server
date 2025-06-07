@@ -69,7 +69,11 @@ If you're still having issues:
 The MCP protocol requires that the server responds to certain initialization methods. Try running:
 
 ```bash
+# If installed with uvx
 echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{}}}' | uvx jenkins-mcp-server
+
+# If installed as a package
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{}}}' | jenkins-mcp-server
 ```
 
 You should see a response with server capabilities.
@@ -86,8 +90,13 @@ If you're still having issues, try:
 
 2. Try installing the MCP server globally:
    ```bash
+   # Install from PyPI (recommended)
    pip install uv
-   uvx install -g git+https://github.com/yourusername/jenkins-mcp-server.git
+   uvx install jenkins-mcp-server==0.1.5
+   
+   # Or if working with a local clone
+   cd /path/to/jenkins-mcp-server
+   uvx install -e .
    ```
 
 3. Update your copilot settings to use the global install:
