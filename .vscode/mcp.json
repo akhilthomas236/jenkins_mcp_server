@@ -6,10 +6,10 @@
       "args": [
         "--verbose",
       ],
-      "jenkinsConfig": {
-        "url": "http://localhost:8080",
-        "username": "admin",
-        "token": "114fef3b43c8eb59c83ba643e6cd2fe40b"
+      "env": {
+        "JENKINS_URL": "${PROMPT:JENKINS_URL}",
+        "JENKINS_USERNAME": "${PROMPT:JENKINS_USERNAME}",
+        "JENKINS_TOKEN": "${SECRET:JENKINS_TOKEN}"
       }
     }
   }

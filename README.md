@@ -42,13 +42,36 @@ python -m jenkins_mcp_server
 
 For quick installation, use one of the one-click install buttons below:
 
-[![Install with UV in VS Code](https://img.shields.io/badge/VS_Code-UV-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.5%22%5D%7D) [![Install with UV in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-UV-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.5%22%5D%7D&quality=insiders)
+[![Install with UV in VS Code](https://img.shields.io/badge/VS_Code-UV-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.5%22%5D%2C%22env%22%3A%7B%22JENKINS_URL%22%3A%22%24%7BPROMPT%3AJENKINS_URL%7D%22%2C%22JENKINS_USERNAME%22%3A%22%24%7BPROMPT%3AJENKINS_USERNAME%7D%22%2C%22JENKINS_TOKEN%22%3A%22%24%7BSECRET%3AJENKINS_TOKEN%7D%22%7D%7D) [![Install with UV in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-UV-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.5%22%5D%2C%22env%22%3A%7B%22JENKINS_URL%22%3A%22%24%7BPROMPT%3AJENKINS_URL%7D%22%2C%22JENKINS_USERNAME%22%3A%22%24%7BPROMPT%3AJENKINS_USERNAME%7D%22%2C%22JENKINS_TOKEN%22%3A%22%24%7BSECRET%3AJENKINS_TOKEN%7D%22%7D%7D&quality=insiders)
 
 For manual installation:
 
 1. Install the Model Context Protocol (MCP) extension for VS Code
-2. Configure your VS Code settings as shown in the configuration section below
-3. Connect any AI assistant that supports MCP (like GitHub Copilot) to your Jenkins environment
+2. Create a `.vscode/mcp.json` file in your workspace with the following configuration:
+
+```json
+{
+  "servers": {
+    "jenkins-mcp-server": {
+      "type": "stdio",
+      "command": "jenkins-mcp-server",
+      "args": ["--verbose"],
+      "env": {
+        "JENKINS_URL": "http://your-jenkins-server:8080",
+        "JENKINS_USERNAME": "your-username",
+        "JENKINS_TOKEN": "your-api-token"
+        // Or use JENKINS_PASSWORD instead of JENKINS_TOKEN if using password authentication
+      }
+    }
+  }
+}
+```
+
+3. Configure your authentication method:
+   - **Recommended**: Use API token authentication by setting `JENKINS_TOKEN`
+   - Alternatively: Use password authentication by setting `JENKINS_PASSWORD`
+
+4. Connect any AI assistant that supports MCP (like GitHub Copilot) to your Jenkins environment
 
 ## Components
 
