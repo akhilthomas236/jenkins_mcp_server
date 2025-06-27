@@ -12,10 +12,10 @@ The easiest way to install and run this server is as a Python package:
 
 ```bash
 # Install from PyPI
-pip install jenkins-mcp-server==0.1.5
+pip install jenkins-mcp-server==0.1.6
 
 # Or install with uv
-uv pip install jenkins-mcp-server==0.1.5
+uv pip install jenkins-mcp-server==0.1.6
 
 # Run the server
 jenkins-mcp-server --verbose
@@ -42,7 +42,7 @@ python -m jenkins_mcp_server
 
 For quick installation, use one of the one-click install buttons below:
 
-[![Install with UV in VS Code](https://img.shields.io/badge/VS_Code-UV-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.5%22%5D%2C%22env%22%3A%7B%22JENKINS_URL%22%3A%22%24%7BPROMPT%3AJENKINS_URL%7D%22%2C%22JENKINS_USERNAME%22%3A%22%24%7BPROMPT%3AJENKINS_USERNAME%7D%22%2C%22JENKINS_TOKEN%22%3A%22%24%7BSECRET%3AJENKINS_TOKEN%7D%22%7D%7D) [![Install with UV in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-UV-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.5%22%5D%2C%22env%22%3A%7B%22JENKINS_URL%22%3A%22%24%7BPROMPT%3AJENKINS_URL%7D%22%2C%22JENKINS_USERNAME%22%3A%22%24%7BPROMPT%3AJENKINS_USERNAME%7D%22%2C%22JENKINS_TOKEN%22%3A%22%24%7BSECRET%3AJENKINS_TOKEN%7D%22%7D%7D&quality=insiders)
+[![Install with UV in VS Code](https://img.shields.io/badge/VS_Code-UV-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.6%22%5D%2C%22env%22%3A%7B%22JENKINS_URL%22%3A%22%24%7BPROMPT%3AJENKINS_URL%7D%22%2C%22JENKINS_USERNAME%22%3A%22%24%7BPROMPT%3AJENKINS_USERNAME%7D%22%2C%22JENKINS_TOKEN%22%3A%22%24%7BSECRET%3AJENKINS_TOKEN%7D%22%7D%7D) [![Install with UV in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-UV-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=jenkins&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22jenkins-mcp-server%3D%3D0.1.6%22%5D%2C%22env%22%3A%7B%22JENKINS_URL%22%3A%22%24%7BPROMPT%3AJENKINS_URL%7D%22%2C%22JENKINS_USERNAME%22%3A%22%24%7BPROMPT%3AJENKINS_USERNAME%7D%22%2C%22JENKINS_TOKEN%22%3A%22%24%7BSECRET%3AJENKINS_TOKEN%7D%22%7D%7D&quality=insiders)
 
 For manual installation:
 
@@ -262,7 +262,7 @@ uvx install jenkins-mcp-server
 pip install uv
 
 # Install the Jenkins MCP server from PyPI
-uvx install jenkins-mcp-server==0.1.5
+uvx install jenkins-mcp-server==0.1.6
 
 # Run the server with verbose output
 uvx jenkins-mcp-server --verbose
