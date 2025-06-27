@@ -242,7 +242,7 @@ async def handle_list_tools() -> list[types.Tool]:
     """
     List available tools for interacting with Jenkins.
     """
-    return [
+    tools = [
         types.Tool(
             name="trigger-build",
             description="Trigger a Jenkins job build",
@@ -325,7 +325,7 @@ async def handle_list_tools() -> list[types.Tool]:
             name="get-node-info",
             description="Get information about a specific Jenkins node/agent",
             inputSchema={
-                "type": "object", 
+                "type": "object",
                 "properties": {
                     "node_name": {"type": "string"},
                 },
@@ -341,6 +341,12 @@ async def handle_list_tools() -> list[types.Tool]:
             },
         ),
     ]
+    
+    print(f"\nRegistering {len(tools)} Jenkins tools:")
+    for tool in tools:
+        print(f"- {tool.name}: {tool.description}")
+    
+    return tools
 
 @server.call_tool()
 async def handle_call_tool(
